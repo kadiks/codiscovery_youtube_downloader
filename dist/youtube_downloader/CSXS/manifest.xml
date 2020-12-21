@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- 1) -->
+<ExtensionManifest ExtensionBundleId="com.easy-youtube-download" ExtensionBundleVersion="1.0.0" Version="7.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtensionList>
+    <!-- 2) -->
+    <Extension Id="com.easy-youtube-download" Version="1.0.0" />
+    <Extension Id="com.easy-youtube-download.server" Version="1.0.0" />
+  </ExtensionList>
+  <ExecutionEnvironment>
+    <HostList>
+      <!-- 3) -->
+      <Host Name="PPRO" Version="9.0" />
+    </HostList>
+    <LocaleList>
+      <Locale Code="All" />
+    </LocaleList>
+    <RequiredRuntimeList>
+      <RequiredRuntime Name="CSXS" Version="7.0" />
+    </RequiredRuntimeList>
+  </ExecutionEnvironment>
+  <DispatchInfoList>
+    <!-- 2) -->
+    <Extension Id="com.easy-youtube-download">
+      <DispatchInfo>
+        <Resources>
+          <!-- 4) -->
+          <MainPath>./client/index.html</MainPath>
+          <!-- 5) -->
+          <ScriptPath>./host/index.jsx</ScriptPath>
+          <CEFCommandLine>
+                <Parameter>--allow-file-access</Parameter>
+                <Parameter>--allow-file-access-from-files</Parameter>
+                <Parameter>--allow-running-insecure-content</Parameter>
+            </CEFCommandLine>
+          <CEFCommandLine />
+        </Resources>
+        <Lifecycle>
+          <AutoVisible>true</AutoVisible>
+        </Lifecycle>
+        <UI>
+          <Type>Panel</Type>
+          <!-- 6) -->
+          <Menu>YouTube downloader</Menu>
+          <Geometry>
+            <Size>
+              <!-- 7) -->
+              <Height>250</Height>
+              <Width>500</Width>
+            </Size>
+          </Geometry>
+          <Icons />
+        </UI>
+      </DispatchInfo>
+    </Extension>
+    <Extension Id="com.easy-youtube-download.server">
+      <DispatchInfo>
+        <Resources>
+          <MainPath>./client/localServer.html</MainPath>
+          <CEFCommandLine>
+            <Parameter>--enable-nodejs</Parameter>
+            <Parameter>--mixed-context</Parameter>
+          </CEFCommandLine>
+        </Resources>
+        <Lifecycle>
+          <AutoVisible>false</AutoVisible>
+        </Lifecycle>
+        <UI>
+          <Type>Custom</Type>
+          <Geometry>
+            <Size>
+              <Height>600</Height>
+              <Width>600</Width>
+            </Size>
+          </Geometry>
+        </UI>
+      </DispatchInfo>
+    </Extension>
+  </DispatchInfoList>
+</ExtensionManifest>

@@ -1,0 +1,129 @@
+:root {
+  --color-bg: #222;
+  --color-body: white;
+
+  --font-header: Oswald, Helvetica, Arial, sans-serif;
+  --font-body: Oswald, Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(../fonts/Oswald-ExtraLight.ttf) format("woff2");
+}
+
+@font-face {
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/Oswald-Regular.ttf) format("woff2");
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-body);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin-bottom: 1em;
+  text-shadow: 2px 3px #555;
+}
+
+h2 {
+  text-align: center;
+}
+
+.panel {
+  display: flex;
+  height: 95vh;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.hide {
+  display: none;
+}
+
+.error-container {
+  position: relative;
+  width: 100%;
+}
+.error {
+  color: #881717;
+  position: absolute;
+  top: -2em;
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in {
+  /* animation: fade 0.3s ease-in-out forwards; */
+  opacity: 1;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+input {
+  background-color: #555;
+  padding: 0.3em;
+  font-size: 1em;
+  width: 80%;
+  border: 0;
+  border-bottom: 3px solid #888;
+  color: #eee;
+
+  margin-bottom: 2em;
+}
+input::placeholder {
+  color: #bbb;
+}
+input:focus {
+  outline: #eee auto 5px;
+}
+
+button {
+  color: var(--color-body);
+  border: 1px solid var(--color-body);
+  background-color: var(--color-bg);
+  font-family: var(--font-header);
+
+  text-transform: uppercase;
+
+  font-size: 0.8em;
+  border-radius: 3px;
+  padding: 0.3em 1em;
+}
+
+button:hover {
+  cursor: pointer;
+  color: var(--color-bg);
+  border: 1px solid var(--color-body);
+  background-color: var(--color-body);
+}

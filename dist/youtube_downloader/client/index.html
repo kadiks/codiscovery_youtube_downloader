@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf8" />
+    <title>Youtube downloader</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- <a href="javascript:history.go(0)">Refresh panel</a> -->
+    <div class="panel loading">
+      <img src="./img/loader-puff.svg" />
+    </div>
+    <div class="panel main hide">
+      <h1>YouTube downloader</h1>
+      <div class="error-container">
+        <div class="error"></div>
+      </div>
+      <input
+        contenteditable=""
+        placeholder="Paste your youtube video link here"
+        type="text"
+      />
+      <button id="import-button">Import in project</button>
+    </div>
+    <div class="panel download hide">
+      <span>Downloading</span>
+      <h2></h2>
+      <div id="progress"></div>
+      <p id="progress-text"></p>
+    </div>
+    <script src="./js/libs/CSInterface.js"></script>
+    <script src="./js/libs/progressbar.js"></script>
+    <script src="./js/libs/i18next.js"></script>
+    <script src="http://localhost:3333/socket.io/socket.io.js"></script>
+    <script src="./js/i18n.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
